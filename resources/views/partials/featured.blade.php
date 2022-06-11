@@ -1,5 +1,5 @@
 <div class="uk-container">
-    <h2 class="uk-text-center">Featured Items</h2>
+    <h2 class="uk-text-center">All Products</h2>
     <div class="uk-card uk-card-default tm-ignore-container">
         <div class="uk-grid-collapse uk-child-width-1-3 uk-child-width-1-4@m tm-products-grid uk-grid"
             uk-grid="">

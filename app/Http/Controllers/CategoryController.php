@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use App\Category;
-use App\SubCategory;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -20,16 +19,15 @@ class CategoryController extends Controller
         $categories = Category::all();
 
         if (request()->category) {
-            $products = Product::where('status','Guar')->with(['users'])->with('categories')->whereHas('categories', function ($query) {
+            $products = Product::with(['users'])->with('categories')->whereHas('categories', function ($query) {
                 $query->where('slug', request()->category);
             });
             $categoryName = optional($categories->where('slug', request()->category)->first())->name;
             $category=Category::where('slug', request()->category)->first();
             
-            $subCategories=SubCategory::where('parent_id',$category->id)->get();
             
         } else {
-            $products = Product::where('featured', true)->with(['users'])->where('status','Guar');
+            $products = Product::with(['users']);
             $categoryName = 'Featured';
         }
 
@@ -44,7 +42,6 @@ class CategoryController extends Controller
         return view('category',compact('products'))->with([            
             'categories' => $categories,
             'categoryName' => $categoryName,
-            'subCategories'=>$subCategories
         ]);
     }
 

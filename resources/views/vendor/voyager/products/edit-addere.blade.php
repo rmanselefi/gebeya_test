@@ -88,9 +88,7 @@
                             <div class="form-group">
                                 <label>Sub Categories</label>
                                 <ul style="list-style-type: none; padding-left: 0">
-                                @foreach ($allSubCategories as $sub_category)
-                                    <li><label><input value="{{ $sub_category->id }}" type="checkbox" name="sub_category[]" style="margin-right: 5px;" {{ $subCategoriesForProduct->contains($sub_category) ? 'checked' : '' }}>{{ $sub_category->name }}</label></li>
-                                @endforeach
+                              
                                 </ul>
                             </div>
 

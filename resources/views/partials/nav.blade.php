@@ -16,10 +16,8 @@
                       @if (! (request()->is('checkout') || request()->is('guestCheckout')))
                         <nav class="uk-visible@m">
                             <ul class="uk-navbar-nav">       
-                                @include('partials.menus.catalog_menu')
                                 <li><a href="{{ route('shop.index') }}">Shop</a></li>
-                                <li><a href="#">About</a></li>
-                                <li><a href="{{ route('contacts') }}">Contacts</a></li>
+                              
                             </ul>
                         </nav>
                      @endif

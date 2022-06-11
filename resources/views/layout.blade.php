@@ -8,7 +8,7 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>Yotor Market | @yield('title', '')</title>
+        <title>Gebeya Test</title>
 
         <link href="/img/favicon.ico" rel="SHORTCUT ICON" />
 
@@ -32,7 +32,7 @@
 
     @yield('content')
 
-    @include('partials.footer')
+    
     @include('partials.cart_slide')
     @include('partials.nav_offcanvas')
 

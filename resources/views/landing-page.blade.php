@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Yotor Market | Home</title>
+    <title>Gebeya Test</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat%7CRoboto:300,400,700" rel="stylesheet">
@@ -39,10 +39,7 @@
                         </a>
                         <nav class="uk-visible@m">
                             <ul class="uk-navbar-nav">
-                                @include('partials.menus.catalog_menu')
-                                <li><a href="{{ route('shop.index') }}">Shop</a></li>
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="{{ route('contacts') }}">Contacts</a></li>
+                                <li><a href="{{ route('shop.index') }}">Shop</a></li>                               
                             </ul>
                         </nav>
                     </div>
@@ -56,7 +53,6 @@
             <!-- end top-nav -->
 
         </header>
-        @include('partials.first_slide')
         <div class="featured-section">
             <div>
                 <section class="uk-section uk-section-default uk-section-small">
@@ -94,8 +90,7 @@
                     </div>
                 </section>
                 
-                @include('partials.middle_slide') 
-                @include('partials.trending')
+               
                 @include('partials.featured')  
                     
                 </div> <!-- end container -->
@@ -104,7 +99,7 @@
 
         <blog-posts></blog-posts>
 
-        @include('partials.footer')
+       
         @include('partials.cart_slide')
         @include('partials.nav_offcanvas')
     </div>

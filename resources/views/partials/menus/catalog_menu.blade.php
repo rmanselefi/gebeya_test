@@ -14,9 +14,7 @@
                             </div>
                         </a>
                         <ul class="uk-nav uk-nav-default">
-                            @foreach (getSubCategory($category->id) as $item)
-                            <li><a href="{{ route('sub_category.index', ['sub_category' => $item->slug]) }}">{{$item->name}}</a></li>
-                            @endforeach
+                          
                         </ul>
                     </div>
                 </li>

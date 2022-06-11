@@ -69,11 +69,7 @@
                                 <section class="uk-card-small uk-card-body">
                                     <h4 class="uk-margin-small-bottom">{{$categoryName}}</h4>
                                     <ul class="uk-nav uk-nav-default">
-                                        @foreach ($subCategories as $category)
-                                            <li class="{{ setActiveCategory($category->slug) }}"><a
-                                                    href="{{ route('sub_category.index', ['sub_category' => $category->slug]) }}">{{ $category->name }}</a>
-                                            </li>
-                                        @endforeach
+                                       
                                     </ul>
 
                                 </section>

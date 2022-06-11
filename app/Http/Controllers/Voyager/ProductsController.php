@@ -5,8 +5,6 @@ namespace App\Http\Controllers\Voyager;
 use App\Product;
 use App\Category;
 use App\CategoryProduct;
-use App\ProductSubCategory;
-use App\SubCategory;
 use Illuminate\Http\Request;
 use TCG\Voyager\Facades\Voyager;
 use Illuminate\Support\Facades\DB;
@@ -162,10 +160,8 @@ class ProductsController extends VoyagerBaseController
         $product = Product::find($id);
         $categoriesForProduct = $product->categories()->get();
 
-        $allSubCategories = SubCategory::all();
-        $subCategoriesForProduct = $product->sub_categories()->get();
 
-        return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable', 'allCategories', 'subCategoriesForProduct','allSubCategories','categoriesForProduct'));
+        return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable', 'allCategories','categoriesForProduct'));
     }
 
     // POST BR(E)AD
@@ -200,12 +196,10 @@ class ProductsController extends VoyagerBaseController
 
             CategoryProduct::where('product_id', $id)->delete();
 
-            ProductSubCategory::where('product_id', $id)->delete();
             
             // Re-insert if there's at least one category checked
             $this->updateProductCategories($request, $id);
 
-            $this->updateProductSubCategories($request,$data->id);
 
             return redirect()
                 ->route("voyager.{$dataType->slug}.index")
@@ -262,10 +256,8 @@ class ProductsController extends VoyagerBaseController
         $allCategories = Category::all();
         $categoriesForProduct = collect([]);
 
-        $allSubCategories = SubCategory::all();
-        $subCategoriesForProduct = collect([]);
 
-        return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable','allSubCategories', 'subCategoriesForProduct','allCategories', 'categoriesForProduct'));
+        return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable','allCategories', 'categoriesForProduct'));
     }
 
     /**
@@ -300,7 +292,6 @@ class ProductsController extends VoyagerBaseController
             event(new BreadDataAdded($dataType, $data));
 
             $this->updateProductCategories($request, $data->id);
-            $this->updateProductSubCategories($request,$data->id);
 
             return redirect()
                 ->route("voyager.{$dataType->slug}.index")
@@ -323,15 +314,5 @@ class ProductsController extends VoyagerBaseController
         }
     }
 
-    protected function updateProductSubCategories(Request $request, $id)
-    {
-        if ($request->sub_category) {
-            foreach ($request->sub_category as $sub_category) {
-                ProductSubCategory::create([
-                    'product_id' => $id,
-                    'sub_category_id' => $sub_category,
-                ]);
-            }
-        }
-    }
+   
 }

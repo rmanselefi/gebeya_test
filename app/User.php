@@ -36,4 +36,9 @@ class User extends \TCG\Voyager\Models\User
     {
         return $this->hasMany('App\Product');
     }
+
+    public function stores()
+    {
+        return $this->hasMany('App\Store');
+    }
 }

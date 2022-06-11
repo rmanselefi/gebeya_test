@@ -1,7 +1,6 @@
 <?php
 
 use Carbon\Carbon;
-use App\SubCategory;
 
 function presentPrice($price)
 {
@@ -60,7 +59,4 @@ function getStockLevel($quantity)
 }
 
 
-function getSubCategory($category_id){
-    $subcategory= SubCategory::where('parent_id',$category_id)->get();
-    return $subcategory;
-}
+

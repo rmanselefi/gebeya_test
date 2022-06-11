@@ -9,7 +9,7 @@ class Product extends Model
 {
     use SearchableTrait;
 
-    protected $fillable = ['name','slug','user_id','price','details','description','status','author','image','quantity','featured'];
+    protected $fillable = ['name', 'slug', 'user_id', 'category_id', 'price', 'details', 'description', 'status', 'author', 'image', 'quantity', 'featured'];
 
     /**
      * Searchable rules.
@@ -36,12 +36,9 @@ class Product extends Model
         return $this->belongsToMany('App\Category');
     }
 
-    public function sub_categories()
-    {
-        return $this->belongsToMany('App\SubCategory');
-    }
+    
 
-     public function users()
+    public function users()
     {
         return $this->belongsTo('App\User');
     }
@@ -49,8 +46,8 @@ class Product extends Model
 
     public function presentPrice()
     {
-        $price = number_format($this->price, 2);     
-        return "$".$price;
+        $price = number_format($this->price, 2);
+        return "$" . $price;
     }
 
     public function scopeMightAlsoLike($query)

@@ -10,7 +10,7 @@
                             <path fill="none" stroke="#000" stroke-width="1.01" d="M6.189,13.611C8.134,15.525 11.097,18.239 13.867,18.257C16.47,18.275 18.2,16.241 18.2,16.241L14.509,12.551L11.539,13.639L6.189,8.29L7.313,5.355L3.76,1.8C3.76,1.8 1.732,3.537 1.7,6.092C1.667,8.809 4.347,11.738 6.189,13.611"></path>
                             </svg>
                             </span>
-                            <span class="tm-pseudo">+251 940 124 787/ +251 912 350 065</span></a>
+                            <span class="tm-pseudo">+251 4 124 787/ +251 912 0 065</span></a>
                   </li>
                   <li>
                     <a href="contacts.html" onclick="return false"><span class="uk-margin-xsmall-right uk-icon" uk-icon="icon: location; ratio: .75;">
@@ -19,7 +19,7 @@
                          <circle fill="none" stroke="#000" cx="10" cy="6.8" r="2.3"></circle>
                          </svg>
                          </span>
-                         <span class="tm-pseudo">Meskel Flower,Worke Assefa Building</span>
+                         <span class="tm-pseudo">Gebeya</span>
                          <span uk-icon="icon: triangle-down; ratio: .75;" class="uk-icon">
                              <svg width="15" height="15" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> 
                              <polygon points="5 7 15 7 10 12"></polygon>
@@ -57,8 +57,7 @@
               <li></li>
               @else
               <nav>
-                <ul class="uk-navbar-nav">
-                  <li><a href="{{ route('unguaranteed.index') }}">Unguaranteed</a></li>
+                <ul class="uk-navbar-nav">                  
                   <li><a href="{{ route('dashboard.index') }}">Post Your Product</a></li>                  
                 </ul>
               </nav>
