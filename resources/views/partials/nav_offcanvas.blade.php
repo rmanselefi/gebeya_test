@@ -22,11 +22,7 @@
                 <li class="uk-parent">
                   <a href="catalog.html">Catalog</a>
                   <ul class="uk-nav-sub uk-list-divider">
-                    @foreach ($categories as $category)
-                      <li>
-                        <a href="{{ route('category.index', ['category' => $category->slug]) }}">{{$category->name}}</a>
-                      </li>
-                    @endforeach
+                   
                     <li class="uk-text-center">
                       <a
                         class="uk-link-muted uk-text-uppercase tm-link-to-all"
